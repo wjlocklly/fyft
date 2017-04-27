@@ -5,7 +5,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <modules>
-  	<module>fyft-common</module>
+  	<!-- <module>fyft-common</module> -->
   	<module>fyft-core</module>
   	<module>fyft-wx</module>
   	<module>fyft-test</module>
@@ -15,6 +15,7 @@
   <!-- 版本号 -->
    <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring.version>1.5.2.RELEASE</spring.version>
 		<junit.version>4.12</junit.version>
 		<mysql-connector-java.version>5.1.37</mysql-connector-java.version>
 		<fastjson.version>1.2.3</fastjson.version>
@@ -32,7 +33,13 @@
    <!-- 依赖管理 -->
    <dependencyManagement>
 	   <dependencies>
-	   	
+	   		
+	   		<dependency>
+		  	  <groupId>org.springframework.boot</groupId>
+			  <artifactId>spring-boot-starter-web</artifactId>
+			  <version>${spring.version}</version>
+		    </dependency>
+    
 		   	<!-- 单元测试 -->
 			<dependency>
 				<groupId>junit</groupId>
