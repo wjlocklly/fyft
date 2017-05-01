@@ -7,10 +7,6 @@ import javax.servlet.http.HttpServletRequestWrapper;
 
 import org.apache.commons.lang3.StringEscapeUtils;
 
-
-
-
-
 /**
  * 清除请求参数值中包含有的Javascript注入代码
  * @author ccn

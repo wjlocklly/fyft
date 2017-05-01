@@ -21,7 +21,8 @@ require(['vue', 'vue-router', 'app'], function (Vue, VueRouter, App) {
     Vue.config.devtools = true
 
     Vue.use(VueRouter)
-
+    
+    //主页模板
     const routes = [
     	{path:'', component:App}
     ]
