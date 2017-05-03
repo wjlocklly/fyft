@@ -9,6 +9,7 @@
   	<module>fyft-core</module>
   	<module>fyft-wx</module>
   	<module>fyft-test</module>
+  	<module>fyft-admin</module>
   </modules>
   
   
