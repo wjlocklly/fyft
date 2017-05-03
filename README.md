@@ -11,13 +11,11 @@
 * fyft-core 基础工程，存放工具封装类
 * fyft-wx webapp 单页应用。使用 vue.js 框架，使用 require.js 管理模块化文件
 * fyft-admin 后台管理
-* 
 
 ##相关链接
 
-* vue.js	https://cn.vuejs.org
-* require.js 及相关插件	<a href="" target="_blank"></a>
-* require.css 插件 <a href="" target="_blank"></a>
-* layui <a href="" target="_blank"></a>
-* 基于layui 后台模板 besteasyteam		http://git.oschina.net/besteasyteam/beginner_admin
-* 
+* vue.js		https://cn.vuejs.org
+* require.js 及相关插件		http://www.requirejs.cn/
+* require.css 插件		https://github.com/guybedford/require-css
+* layui		http://www.layui.com/
+* 基于layui 后台模板 besteasyteam			http://git.oschina.net/besteasyteam/beginner_admin
