@@ -12,7 +12,7 @@
 * fyft-wx webapp 单页应用。使用 vue.js 框架，使用 require.js 管理模块化文件
 * fyft-admin 后台管理
 * 
-* 
+
 #相关链接
 ---
 * vue.js	https://cn.vuejs.org
