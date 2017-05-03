@@ -3,28 +3,42 @@
  */
 
 var requireConfig = {
-    baseUrl:'view/script',
+	urlArgs: "r=" + (new Date()).getTime(),
+	baseUrl:'view/script',
     paths: {
         'text': '../assets/require/text',
         'vue': '../assets/vue/vue.min',
-        'vue-router': '../assets/vue/vue-router'
+        'vue-router': '../assets/vue/vue-router',
+        'zepto':'../assets/jqweui/zepto',
+        'jqweui':'../assets/jqweui/jquery-weui.min'
     },
     shim: {
+    	"jqweui" : ["zepto"]
     },
     map: {
+    	'*': {
+    	      'css': '../assets/require/css.min' // or whatever the path to require-css is
+    	    }
     }
 }
-
+// 
 require.config(requireConfig)
-require(['vue', 'vue-router', 'app'], function (Vue, VueRouter, App) {
+require(['vue', 'vue-router', 'zepto', 'jqweui', 'app'], function (Vue, VueRouter, $, Jqweui, App) {
     Vue.config.debug = true
     Vue.config.devtools = true
 
     Vue.use(VueRouter)
     
-    //主页模板
+    //路由配置
     const routes = [
-    	{path:'', component:App}
+    	{path:'', component:App},
+    	{path:'/content', 
+		 component:function(resolve) {
+	            require(['content'], function(Content){
+	                resolve(Content)
+	            })
+	        }
+    	}
     ]
     
     const router = new VueRouter({
