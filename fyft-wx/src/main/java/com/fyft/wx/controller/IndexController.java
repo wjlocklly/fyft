@@ -17,6 +17,6 @@ public class IndexController {
 	@RequestMapping("test")
 	public String name() {
 		System.out.println("shen test...");
-		return "welcome to the FYFT index page.";
+		return "welcome to the FYFT index page.I'm shen.";
 	}
 }

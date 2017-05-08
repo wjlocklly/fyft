@@ -23,6 +23,6 @@ public class WxApplication implements EmbeddedServletContainerCustomizer{
 
 	@Override
 	public void customize(ConfigurableEmbeddedServletContainer config) {
-		config.setPort(8000);//设置端口
+		config.setPort(8002);//设置端口
 	}
 }

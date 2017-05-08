@@ -60,7 +60,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-devtools</artifactId>
 				<version>${spring.version}</version>
-				<optional>true</optional>
 				<scope>true</scope>
 			</dependency>
     		
