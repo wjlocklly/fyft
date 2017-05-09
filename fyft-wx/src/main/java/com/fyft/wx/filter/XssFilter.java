@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 
 import com.fyft.core.xss.ScriptRequestWarpper;
+import com.fyft.wx.logger.WxLogger;
 
 
 /**
@@ -43,6 +44,7 @@ public class XssFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		
 		HttpServletRequest req = (HttpServletRequest) request;
+		WxLogger.logger(this).info("guo lv..");
 		//String url = req.getRequestURL().toString();
 		//if (url.contains(".action") || url.contains(".do")|| url.endsWith("jsp")) {
 			req = new ScriptRequestWarpper(req); // 处理javascript注入代码

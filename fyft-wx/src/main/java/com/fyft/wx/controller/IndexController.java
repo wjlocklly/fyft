@@ -3,6 +3,8 @@ package com.fyft.wx.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fyft.wx.logger.WxLogger;
+
 /**
  *<p>Title: IndexController.java</p>
  *<p>Description: 主页</p>
@@ -13,10 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class IndexController {
-	
 	@RequestMapping("test")
 	public String name() {
-		System.out.println("shen test...");
+		WxLogger.logger(this).info("shen test");
 		return "welcome to the FYFT index page.I'm shen.";
 	}
 }
