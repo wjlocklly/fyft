@@ -62,7 +62,7 @@
 				<version>${spring.version}</version>
 				<scope>true</scope>
 			</dependency>
-    		
+			
 		   	<!-- 单元测试 -->
 			<dependency>
 				<groupId>junit</groupId>
