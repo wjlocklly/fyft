@@ -1,9 +1,12 @@
 package com.fyft.wx.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fyft.wx.logger.WxLogger;
+
 
 /**
  *<p>Title: IndexController.java</p>
@@ -15,9 +18,13 @@ import com.fyft.wx.logger.WxLogger;
 
 @RestController
 public class IndexController {
+	
+	private final static Logger LOG = LoggerFactory.getLogger(IndexController.class);
+	
 	@RequestMapping("test")
 	public String name() {
-		WxLogger.logger(this).info("shen test");
+		LOG.info("a info logger...");
+		LOG.error("a error logger...");
 		return "welcome to the FYFT index page.I'm shen.";
 	}
 }
