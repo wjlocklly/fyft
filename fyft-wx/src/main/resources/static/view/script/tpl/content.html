@@ -1,5 +1,13 @@
 <div>
 
-<h3>测试文本。。</h3>
+<h4>{{blog}}</h4>
 
+
+<br>
+<li v-for="blog in blogList">
+	<a :href="'http://www.javazgs.com/' + blog.path">{{ blog.title }}</a>
+	<br>
+	<h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ blog.date }}</h5>
+	<br>
+</li>
 </div>

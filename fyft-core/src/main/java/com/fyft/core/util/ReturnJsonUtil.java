@@ -2,6 +2,8 @@ package com.fyft.core.util;
 
 import java.util.Map;
 
+import org.apache.commons.lang3.StringUtils;
+
 import com.alibaba.fastjson.JSONObject;
 
 /**
@@ -13,6 +15,13 @@ import com.alibaba.fastjson.JSONObject;
  */
 public class ReturnJsonUtil {
 
+	public static String jsonString(String msg){
+		if(StringUtils.isBlank(msg)){
+			return new JSONObject().toJSONString();
+		}
+		return JSONObject.toJSON(ReturnMapUtils.success(msg)).toString();
+	}
+	
 	public static Object success(String msg){
 		return JSONObject.toJSON(ReturnMapUtils.success(msg));
 	}

@@ -1,10 +1,14 @@
 package com.fyft.wx.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fyft.core.util.HttpClientHelper;
 import com.fyft.wx.logger.WxLogger;
 
 
@@ -26,5 +30,14 @@ public class IndexController {
 		LOG.info("a info logger...");
 		LOG.error("a error logger...");
 		return "welcome to the FYFT index page.I'm shen.";
+	}
+	
+	@RequestMapping("blogList")
+	public String getBlogData(){
+		String blogUrl = "http://www.javazgs.com/content.json?t=1494604782511";
+		Map<String, String> map = null;
+		//String result = HttpClientHelper.post(blogUrl, map);
+		String result = HttpClientHelper.get(blogUrl, map);
+		return result;
 	}
 }

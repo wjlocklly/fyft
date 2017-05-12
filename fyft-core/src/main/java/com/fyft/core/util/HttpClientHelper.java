@@ -51,7 +51,21 @@ import org.apache.http.util.EntityUtils;
 public class HttpClientHelper {
 
 	
-	
+	public static String get(String url,Map<String, String> args){
+		String data = null;
+		try{
+			HttpGet httpget = new HttpGet(url); 
+			
+			CloseableHttpClient httpclient = createClientDefault(url);
+			CloseableHttpResponse response = httpclient.execute(httpget);
+			HttpEntity entity = response.getEntity();
+			//data = entity.toString();
+			data = EntityUtils.toString(entity);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return data;
+	}
 	
 	/**
 	 * 
