@@ -12,7 +12,10 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fyft.core.datasuorce.TargetDataSource;
 import com.fyft.core.util.ReturnJsonUtil;
+import com.fyft.wx.logger.WxLogger;
+import com.fyft.wx.service.TestService;
 
 /**
  *<p>Title: AuthController.java</p>
@@ -24,6 +27,9 @@ import com.fyft.core.util.ReturnJsonUtil;
 
 @RestController
 public class AuthController {
+	
+	@Autowired
+	private TestService service;
 	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
@@ -54,6 +60,11 @@ public class AuthController {
 		List<Map<String, Object>> list = jdbcTemplate.queryForList("select t.*, t.rowid from blog t");//select sysdate from dual
 		System.out.println(list);
 		return list.toString();
+	}
+	
+	@RequestMapping("/mysql")
+	public String mysqlTest(){
+		return service.mysqlTest();
 	}
 	
 }

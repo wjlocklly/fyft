@@ -5,6 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.context.annotation.Import;
+
+import com.fyft.core.datasuorce.DynamicDataSourceRegister;
 
 
 /**
@@ -17,6 +20,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 
 @SpringBootApplication
 @ServletComponentScan
+@Import({DynamicDataSourceRegister.class})
 public class WxApplication implements EmbeddedServletContainerCustomizer{
 	
 	public static void main(String[] args) {
