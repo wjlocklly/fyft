@@ -48,4 +48,12 @@ public class AuthController {
 			//return "{success:false}";
 			return ReturnJsonUtil.error("登录失败").toString();
 	}
+	
+	@RequestMapping("/oracle")
+	public String oracleTest(){
+		List<Map<String, Object>> list = jdbcTemplate.queryForList("select t.*, t.rowid from blog t");//select sysdate from dual
+		System.out.println(list);
+		return list.toString();
+	}
+	
 }
