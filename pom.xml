@@ -32,6 +32,7 @@
 		<jstl.version>1.2</jstl.version>
 		<httpclient.version>4.3.5</httpclient.version>
 		<httpmime.version>4.5.3</httpmime.version>
+		<aspectjrt.version>1.8.10</aspectjrt.version>
    </properties>
    
    <!-- 依赖管理 -->
@@ -56,6 +57,12 @@
 			    <artifactId>spring-boot-starter-jdbc</artifactId>
 			    <version>${spring.version}</version>
 			</dependency>
+			
+			<dependency>
+	            <groupId>org.springframework.boot</groupId>
+	            <artifactId>spring-boot-starter-data-jpa</artifactId>
+	            <version>${spring.version}</version>
+	        </dependency>
     		
     		<!-- devtools热部署 -->
     		<dependency>
@@ -159,6 +166,21 @@
 			    <artifactId>httpmime</artifactId>
 			    <version>${httpmime.version}</version>
 			</dependency>
+			
+			<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjrt -->
+			<dependency>
+			    <groupId>org.aspectj</groupId>
+			    <artifactId>aspectjrt</artifactId>
+			    <version>${aspectjrt.version}</version>
+			</dependency>
+			
+			<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+			<dependency>
+			    <groupId>org.aspectj</groupId>
+			    <artifactId>aspectjweaver</artifactId>
+			    <version>${aspectjrt.version}</version>
+			</dependency>
+			
 			
 	  </dependencies>
   </dependencyManagement>
