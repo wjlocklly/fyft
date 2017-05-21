@@ -34,9 +34,6 @@ public class TestService {
 	public String mysqlTest(){
 		//List<Map<String, Object>> list = jdbcTemplate.queryForList("select t.*, t.rowid from blog t");
 		List<Map<String,Object>> list = jdbcTemplate.queryForList("select * from blog");
-		System.out.println(list);
-		System.out.println();
-		System.out.println(dataSource.getTimeBetweenEvictionRunsMillis());
 		return "test";
 	}
 }
