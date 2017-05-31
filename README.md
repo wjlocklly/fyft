@@ -17,5 +17,6 @@
 * vue.js		https://cn.vuejs.org
 * require.js 及相关插件		http://www.requirejs.cn/
 * require.css 插件		https://github.com/guybedford/require-css
+* jqweui组件		http://jqweui.com/
 * layui		http://www.layui.com/
 * 基于layui 后台模板 besteasyteam			http://git.oschina.net/besteasyteam/beginner_admin
