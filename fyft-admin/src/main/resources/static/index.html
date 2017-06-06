@@ -125,8 +125,11 @@ layui.use( ['jquery'], function(){
 		dataType:'json',
 		data:{},
 		success:function(data){
-			navs = data;
+			var dd = '[{"title": "组织管理","icon": "fa-cubes","spread": false,"href" : "baidu.com"}]'
+			console.log(data.msg)
+			navs = JSON.parse(dd);
 			//alert('dsf')
+			//nav=data;
 			$.getScript("/res/js/index.js",function(){  
 	        });
 		},

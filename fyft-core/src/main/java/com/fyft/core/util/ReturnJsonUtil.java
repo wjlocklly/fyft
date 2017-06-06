@@ -14,7 +14,10 @@ import com.alibaba.fastjson.JSONObject;
  *@version v1.0
  */
 public class ReturnJsonUtil {
-
+	
+	public  final static String SUCCESS = "success";
+	public  final static String MSG = "msg";
+	
 	public static String jsonString(String msg){
 		if(StringUtils.isBlank(msg)){
 			return new JSONObject().toJSONString();
@@ -22,12 +25,34 @@ public class ReturnJsonUtil {
 		return JSONObject.toJSON(ReturnMapUtils.success(msg)).toString();
 	}
 	
-	public static Object success(String msg){
-		return JSONObject.toJSON(ReturnMapUtils.success(msg));
+	public static String success(String msg){
+		if(StringUtils.isBlank(msg)){
+			return new JSONObject().toJSONString();
+		}
+		return JSONObject.toJSON(ReturnMapUtils.success(msg)).toString();
 	}
 	
-	public static Object error(String msg){
-		return JSONObject.toJSON(ReturnMapUtils.error(msg));
+	public static String successMap(Map<String, Object> result, String msg){
+		result.put(SUCCESS, true);
+		if(StringUtils.isNoneBlank(msg)){
+			result.put(MSG, msg);
+		}
+		return JSONObject.toJSON(result).toString();
+	}
+	
+	public static String error(String msg){
+		if(StringUtils.isBlank(msg)){
+			return new JSONObject().toJSONString();
+		}
+		return JSONObject.toJSON(ReturnMapUtils.error(msg)).toString();
+	}
+	
+	public static String errorMap(Map<String, Object> result, String msg){
+		result.put(SUCCESS, false);
+		if(StringUtils.isNoneBlank(msg)){
+			result.put(MSG, msg);
+		}
+		return JSONObject.toJSON(result).toString();
 	}
 	
 	public static boolean isSuccess(Map<String,Object> args){

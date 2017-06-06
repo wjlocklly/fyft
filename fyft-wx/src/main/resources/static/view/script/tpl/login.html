@@ -1,0 +1,31 @@
+
+<div>
+
+	<header class='demos-header'>
+      <h1 class="demos-title">登录页</h1>
+    </header>
+    
+	<div class="weui-cells weui-cells_form">
+	
+      <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">账号</label></div>
+        <div class="weui-cell__bd">
+          <input class="weui-input" type="text" placeholder="请输入账号" v-model="userCode">
+        </div>
+      </div>
+      
+      <div class="weui-cell">
+        <div class="weui-cell__hd"><label class="weui-label">密码</label></div>
+        <div class="weui-cell__bd">
+          <input class="weui-input" type="password" placeholder="请输入密码" v-model="passWord">
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="weui-btn-area">
+      <a class="weui-btn weui-btn_primary" href="javascript:" @click="login()">确定</a>
+    </div>
+    
+</div>
+

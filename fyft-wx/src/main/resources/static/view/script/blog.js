@@ -2,7 +2,7 @@
  * 应用内容
  */
 //http://www.javazgs.com/content.json?t=1494604782511
-define(['vue', 'text!tpl/content.html', 'css!../script/css/demos.css'], function (Vue, ContentHtml) {
+define(['vue', 'text!tpl/blog.html', 'css!../script/css/demos.css'], function (Vue, ContentHtml) {
     return Vue.extend({
         template: ContentHtml,
         data: function(){
@@ -15,13 +15,11 @@ define(['vue', 'text!tpl/content.html', 'css!../script/css/demos.css'], function
         	this.blog="git page 博客列表";
         	var thisVue = this;
         	$.ajax({
-  				url:'/blogList',
+  				url:'/index/blogList',
   				type:'post',
   				dataType:'json',
   				data:{},
   				success:function(data){
-  					console.log(data)
-  					console.log(data[0].title)
   					thisVue.blogList=data;
   				},
   				error:function(stats){

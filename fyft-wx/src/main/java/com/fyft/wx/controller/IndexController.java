@@ -1,7 +1,10 @@
 package com.fyft.wx.controller;
 
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,23 +24,18 @@ import com.fyft.wx.logger.WxLogger;
  */
 
 @RestController
+@RequestMapping("/index")
 public class IndexController {
 	
 	private final static Logger LOG = LoggerFactory.getLogger(IndexController.class);
 	
-	@RequestMapping("test")
-	public String name() {
-		LOG.info("a info logger...");
-		LOG.error("a error logger...");
-		return "welcome to the FYFT index page.I'm shen.";
-	}
-	
-	@RequestMapping("blogList")
-	public String getBlogData(){
+	@RequestMapping("/blogList")
+	public String getBlogData(HttpServletRequest request){
 		String blogUrl = "http://www.javazgs.com/content.json?t=1494604782511";
 		Map<String, String> map = null;
 		//String result = HttpClientHelper.post(blogUrl, map);
 		String result = HttpClientHelper.get(blogUrl, map);
+		LOG.info("测试gitPage博客请求......");
 		return result;
 	}
 }

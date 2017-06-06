@@ -21,6 +21,9 @@ public class MenuController {
 	public String getMenuList(){
 		AdminLogger.logger(this).info("get menuList");
 		//return null;
-		return ReturnJsonUtil.success("test").toString();
+		String menuList = "[{'title': '组织管理','icon': 'fa-cubes','spread': false,'href' : 'baidu.com'}]";
+		
+		//return ReturnJsonUtil.success("test").toString();
+		return ReturnJsonUtil.success(menuList).toString();
 	}
 }
