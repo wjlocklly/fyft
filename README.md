@@ -1,6 +1,7 @@
 # fyft
 
-面向webapp开发
+面向webapp开发，单页应用。使用require.js管理js模块，没有使用webpack管理vue，组件是普通html文件，前后端未完全分离。
+所以本工程主要只是对未学webpack的后端开发者提供一种如何整合Spring Boot和vue.js的思路。
 
 涉及技术:
 
