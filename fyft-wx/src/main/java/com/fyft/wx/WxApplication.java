@@ -5,6 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import com.fyft.wx.bean.AuthUser;
 
 
 /**
@@ -20,7 +23,8 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 public class WxApplication implements EmbeddedServletContainerCustomizer{
 	
 	public static void main(String[] args) {
-		SpringApplication.run(WxApplication.class, args);
+		ConfigurableApplicationContext applicationContext = SpringApplication.run(WxApplication.class, args);
+		AuthUser.setApplicationContext(applicationContext);
 	}
 
 	@Override

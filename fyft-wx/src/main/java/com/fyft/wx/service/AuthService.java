@@ -12,4 +12,6 @@ import com.fyft.wx.bean.User;
 public interface AuthService {
 	
 	public User getUserByCode(String userCode);
+	
+	public User getUserById(String userId);
 }

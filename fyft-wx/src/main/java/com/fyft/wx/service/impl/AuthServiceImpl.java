@@ -25,4 +25,9 @@ public class AuthServiceImpl implements AuthService {
 		return authDao.getUserByCode(userCode);
 	}
 
+	@Override
+	public User getUserById(String userId) {
+		return authDao.getUserById(userId);
+	}
+
 }

@@ -37,5 +37,15 @@ public class AuthDaoImpl implements AuthDao{
 		}else
 			return null;
 	}
+	
+	public User getUserById(String userId){
+		String sql = "select * from BLOG_USER where USER_ID=?";
+		List<User> list = jdbcTemplate.query(sql, new Object[]{ userId }, 
+				new BeanPropertyRowMapper<User>(User.class));
+		if(list.size() > 0){
+			return list.get(0);
+		}else
+			return null;
+	}
 
 }

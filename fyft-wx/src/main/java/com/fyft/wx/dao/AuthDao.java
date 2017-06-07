@@ -13,4 +13,6 @@ public interface AuthDao {
 
 	public User getUserByCode(String userCode);
 	
+	public User getUserById(String userId);
+	
 }
