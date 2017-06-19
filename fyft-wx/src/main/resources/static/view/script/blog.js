@@ -12,7 +12,7 @@ define(['vue', 'text!tpl/blog.html', 'css!../script/css/demos.css'], function (V
             }
         },
         created: function(){
-        	this.blog="git page 博客列表";
+        	this.blog="GitHub Pages 博客列表";
         	var thisVue = this;
         	$.ajax({
   				url:'/index/blogList',

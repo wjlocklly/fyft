@@ -31,8 +31,8 @@ public class AuthController {
 	
 	private final static Logger LOG = LoggerFactory.getLogger(AuthController.class);
 	
-	@Autowired
-	private AuthService authService;
+		@Autowired
+		private AuthService authService;
 	
 	@RequestMapping("/login")
 	public String login(HttpServletRequest request) {

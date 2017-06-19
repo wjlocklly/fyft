@@ -1,13 +1,22 @@
 <div>
 
-<h4>{{blog}}</h4>
-
-
-<br>
-<li v-for="blog in blogList">
-	<a :href="'http://www.javazgs.com/' + blog.path">{{ blog.title }}</a>
-	<br>
-	<h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ blog.date }}</h5>
-	<br>
-</li>
+	<div class="weui-panel weui-panel_access">
+		<div class="weui-panel__hd"><b>{{blog}}</b></div>
+		<div class="weui-panel__bd" v-for="blog in blogList">
+		
+			<a :href="'http://www.javazgs.com/' + blog.path" class="weui-media-box weui-media-box_appmsg">
+				<div class="weui-media-box__bd">
+					<h4 class="weui-media-box__title">{{ blog.title }}</h4>
+					<p class="weui-media-box__desc">{{ (blog.date).substr(0,10) }} 
+						<span>{{ blog.tags[0].name }}</span>
+					</p>
+				</div>
+			</a>
+			
+		</div>
+    </div>
+    
 </div>
+
+
+
