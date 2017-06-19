@@ -60,6 +60,28 @@ require(['vue', 'vue-router', 'zepto', 'jqweui', 'app'], function (Vue, VueRoute
 	        meta: {
     			requiresAuth: true
 		    }
+    	},
+    	{
+    		path:'/zhihu', 
+    		component:function(resolve) {
+	            require(['zhihu'], function(Content){
+	                resolve(Content)
+	            })
+	        },
+	        meta: {
+    			requiresAuth: true
+		    }
+    	},
+    	{
+    		path:'/zhihu/:id', 
+    		component:function(resolve) {
+	            require(['article'], function(Content){
+	                resolve(Content)
+	            })
+	        },
+	        meta: {
+    			requiresAuth: true
+		    }
     	}
     ]
     

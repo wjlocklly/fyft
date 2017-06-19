@@ -1,0 +1,23 @@
+<div>
+
+	<div class="weui-panel weui-panel_access">
+		<div class="weui-panel__hd"><b>{{title}} {{date}}</b></div>
+		<div class="weui-panel__bd" v-for="data in zhihuList">
+		
+			<router-link :to="{ path: 'zhihu/'+data.id }" class="weui-media-box weui-media-box_appmsg">
+				<div class="weui-media-box__hd">
+					<img class="weui-media-box__thumb" :src="data.images">
+				</div>
+				<div class="weui-media-box__bd">
+					<h4 class="weui-media-box__title" style="white-space: normal;">{{ data.title }}</h4>
+					<p class="weui-media-box__desc"></p>
+				</div>
+			</router-link>
+			
+		</div>
+    </div>
+    
+</div>
+
+
+

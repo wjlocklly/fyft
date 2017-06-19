@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fyft.core.util.HttpClientHelper;
@@ -35,7 +37,28 @@ public class IndexController {
 		Map<String, String> map = null;
 		//String result = HttpClientHelper.post(blogUrl, map);
 		String result = HttpClientHelper.get(blogUrl, map);
-		LOG.info("测试gitPage博客请求......");
+		//LOG.info("测试gitPage博客请求......");
 		return result;
 	}
+	
+	@RequestMapping("/zhihuList")
+	public String getZhiHuData(HttpServletRequest request){
+		String url = "https://news-at.zhihu.com/api/4/news/latest";
+		Map<String, String> map = null;
+		String result = HttpClientHelper.get(url, map);
+		//LOG.info("测试知乎日报请求......");
+		return result;
+	}
+	
+	@RequestMapping("/zhihu/{id}")
+	public String getActicleData(@PathVariable("id") String artId, HttpServletRequest request){
+		String url = "https://news-at.zhihu.com/api/4/news/"+artId;
+		Map<String, String> map = null;
+		String result = HttpClientHelper.get(url, map);
+		//LOG.info("测试知乎日报请求......");
+		return result;
+	}
+	
+	
+	
 }
