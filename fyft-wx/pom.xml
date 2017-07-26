@@ -10,10 +10,16 @@
 	
 	<dependencies>
 	  	<dependency>
-	  	  <groupId>org.springframework.boot</groupId>
-		  <artifactId>spring-boot-starter-web</artifactId>
+		  	<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 	    </dependency>
 	    
+	    <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        
 	    <dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-jdbc</artifactId>
@@ -48,11 +54,19 @@
 		<!-- <plugin>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-war-plugin</artifactId>
-			<version>2.6</version>
 			<configuration>
 				<failOnMissingWebXml>false</failOnMissingWebXml>
 			</configuration>
 		</plugin> -->
+		
+		<!-- <plugin>
+            <groupId>org.apache.tomcat.maven</groupId>
+            <artifactId>tomcat7-maven-plugin</artifactId>
+            <configuration>
+                <port>8080</port>
+                <path>/</path>
+            </configuration>
+        </plugin> -->
 		  
 		<plugin>
 			<groupId>org.springframework.boot</groupId>

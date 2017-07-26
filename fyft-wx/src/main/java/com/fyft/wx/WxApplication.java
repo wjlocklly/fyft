@@ -6,9 +6,7 @@ import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletCont
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.ConfigurableApplicationContext;
-
 import com.fyft.wx.bean.AuthUser;
-
 
 /**
  *<p>Title: WxApplication.java</p>
@@ -17,11 +15,10 @@ import com.fyft.wx.bean.AuthUser;
  *@author shen
  *@version v1.0
  */
-
 @SpringBootApplication
 @ServletComponentScan
-public class WxApplication implements EmbeddedServletContainerCustomizer{
-	
+public class WxApplication implements EmbeddedServletContainerCustomizer {
+    
 	public static void main(String[] args) {
 		ConfigurableApplicationContext applicationContext = SpringApplication.run(WxApplication.class, args);
 		AuthUser.setApplicationContext(applicationContext);
@@ -31,4 +28,5 @@ public class WxApplication implements EmbeddedServletContainerCustomizer{
 	public void customize(ConfigurableEmbeddedServletContainer config) {
 		config.setPort(8002);//设置端口
 	}
+	
 }
